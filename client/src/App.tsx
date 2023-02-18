@@ -116,7 +116,10 @@ function App() {
           resources={[
             {
               name: "property",
-              list: MuiInferencer,
+              list: AllProperties,
+              show:PropertyDetails,
+              create:CreateProperty,
+              edit:EditProperty,
               icon: <VillaOutlined />
             },
             {
