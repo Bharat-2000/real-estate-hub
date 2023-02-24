@@ -32,7 +32,7 @@ const AllProperties = () => {
     return {
       title: logicalFilters.find((item) => item.field === 'title')?.value || '',
       propertyType: logicalFilters.find((item) => item.field === 'propertyType')?.value || '',
-    }
+    };
   }, [filters])
 
   const toggleSort = (field: string) => {
@@ -148,7 +148,7 @@ const AllProperties = () => {
             onChange={(e) => setPageSize(e.target.value ? Number(e.target.value) : 10)}
           >
             {[10, 20, 30, 40, 50].map((size) => (
-              <MenuItem value={size}>Show {size}</MenuItem>
+              <MenuItem key={size}>Show {size}</MenuItem>
             ))}
           </Select>
         </Box>
