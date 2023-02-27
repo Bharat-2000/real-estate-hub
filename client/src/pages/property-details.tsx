@@ -227,7 +227,7 @@ const PropertyDetails = () => {
                     }
                     handleClick={() => {
                       if(isCurrentUser){
-                        navigate(`/properties/edit${propertyDetails._id}`);
+                        navigate(`/properties/edit/${propertyDetails._id}`);
                       }
                     }}
                   />
@@ -247,12 +247,13 @@ const PropertyDetails = () => {
               </Stack>
 
               <Stack>
-                <img 
+                {/* <img 
                   src="https://serpmedia.org/scigen/images/googlemaps-nyc-standard.png?crc=3787557525"
                   width="100%"
                   height={306}
                   style={{borderRadius: 10, objectFit: 'cover'}}
-                />
+                /> */}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3340566.7438095557!2d-82.10457759722883!3d35.149831380639405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88541fc4fc381a81%3A0xad3f30f5e922ae19!2sNorth%20Carolina%2C%20USA!5e0!3m2!1sen!2sin!4v1677483244092!5m2!1sen!2sin" width="100%" height={306} style={{borderRadius: 10, }} loading="lazy" ></iframe>
               </Stack>
               <Box>
                 <CustomButton 

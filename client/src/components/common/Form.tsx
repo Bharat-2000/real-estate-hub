@@ -120,4 +120,4 @@ const Form = ({ type, register, handleSubmit, handleImageChange, formLoading, on
   )
 }
 
-export default Form
+export default Form;
