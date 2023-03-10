@@ -1,9 +1,28 @@
-import React from 'react'
+import { useOne } from "@pankod/refine-core";
+import { useParams } from "@pankod/refine-react-router-v6";
+import {Profile} from 'components';
 
-const agentProfile = () => {
+
+const AgentProfile = () => {
+  const {id} = useParams();
+  const {data, isLoading, isError} = useOne({
+    resource: 'users',
+    id: id as string,
+  });
+  console.log(data, "data");
+  const myProfile = data?.data ?? [];
+  console.log(myProfile, "myProfile");
+  if(isLoading) return <div>loading...</div>
+  if(isError) return <div>error...</div>
   return (
-    <div>agent-profile</div>
+    <Profile 
+      type="My"
+      name={myProfile.name}
+      email={myProfile.email}
+      avatar={myProfile.avatar}
+      properties={myProfile.allProperties}
+    />
   )
 }
 
-export default agentProfile
+export default AgentProfile;
