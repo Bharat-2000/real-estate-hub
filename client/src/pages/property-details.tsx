@@ -23,8 +23,9 @@ const PropertyDetails = () => {
 
   if (isLoading) return <div>Loading...</div>
   if (isError) return <div>Something went wrong!</div>
+  console.log(user, 'user');
 
-  const isCurrentUser = user.email === propertyDetails.creator.email;
+  const isCurrentUser = user?.email === propertyDetails?.creator?.email;
 
   const handleDeleteProperty = () => {
     const response  = window.confirm(
@@ -156,7 +157,7 @@ const PropertyDetails = () => {
                 >
                   <img 
                     src={
-                      checkImage(propertyDetails.creator.avatar) ? propertyDetails.creator.avatar : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png'
+                      checkImage(propertyDetails?.creator?.avatar) ? propertyDetails?.creator?.avatar : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png'
                     }
                     alt='avatar'
                     width={90}
@@ -173,7 +174,7 @@ const PropertyDetails = () => {
                       fontWeight={600}
                       color="#11142D"
                     >
-                      {propertyDetails.creator.name}
+                      {propertyDetails?.creator?.name}
                     </Typography>
                     <Typography
                       mt="5px"
@@ -206,7 +207,7 @@ const PropertyDetails = () => {
                     fontWeight={600}
                     color="#11142D"
                   >
-                    {propertyDetails.creator.allProperties.lenght}{" "}Properties
+                    {propertyDetails?.creator?.allProperties?.length}{" "}Properties
                   </Typography>
                 </Stack>
 
@@ -227,7 +228,7 @@ const PropertyDetails = () => {
                     }
                     handleClick={() => {
                       if(isCurrentUser){
-                        navigate(`/properties/edit/${propertyDetails._id}`);
+                        navigate(`/properties/edit/${propertyDetails?._id}`);
                       }
                     }}
                   />
